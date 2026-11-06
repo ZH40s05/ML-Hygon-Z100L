@@ -1,34 +1,32 @@
 # Compatibility mechanism
 
-The failure chain was observed as HIP kernel loading → HSA executable freeze → lazy internal utility queue → KFD CREATE_QUEUE → EFAULT. The vendor driver logs separately printed calculated control/CWSR sizes 0x5000/0x1fff000 and supplied sizes 0x5000/0x22f1000. The driver source from the original local installation package contained a strict equality check before queue creation. That vendor source is not redistributed here.
+The observed failure chain was HIP kernel loading → HSA executable freeze → internal utility queue → KFD CREATE_QUEUE → EFAULT. The driver log showed required control/CWSR sizes of 0x 5000/0x 1fff 000 and supplied sizes of 0x 5000/0x 22f 1000. The Hygon driver checks these dimensions before creating a queue.
 
-For the verified non-dp4x Z100L profile:
+For the Z 100L profile with dp 4x disabled:
 
-```text
+~~~text
 CU = SIMD_count / SIMD_per_CU = 240 / 4 = 60
-control = min(align4096(40 + CU * 40 * 8 + 8), 0x7000) = 20480
+control = min(align 4096(40 + CU * 40 * 8 + 8), 0x 7000) = 20480
 wave_data = CU * (SGPR + VGPR + LDS + 4096)
           = 60 * (16384 + 524288 + 65536 + 4096) = 36618240
-upstream_total = control + align4096(wave_data) = 36638720
-vendor_total = min(upstream_total, 0x1fff000) = 33550336
-```
+upstream_total = control + align 4096(wave_data) = 36638720
+vendor_total = min(upstream_total, 0x 1fff 000) = 33550336
+~~~
 
-The overlay supplies both dimensions through existing topology properties. The unmodified runtime reads them before allocating and initializing the context-save area. This keeps allocation, header initialization and the submitted dimensions consistent. Merely truncating the ioctl field after allocation was not used as the fix.
+The adapter supplies both dimensions through KFD topology properties. The community runtime reads them before allocating and initializing the context-save area, keeping the allocation, header and queue dimensions consistent.
 
-The topology adapter also maps native vendor target90106 to verified AMD target90006/gfx906 for this container. PCI vendor and device identity remain Hygon1d94:55b7; the generic AMD Radeon Graphics runtime name is not a claim that the physical devices are AMD products.
+It also maps the native target 90106 to 90006/gfx 906 within the container. PCI vendor and device fields remain 1d 94:55b 7.
 
-The current adapter rejects a different hydcu version/source identity, nonmatching vendor/device/ISA/CU fields, duplicate properties, malformed lines, conflicting dimensions, any GPU count other than eight, duplicate GPU IDs or render minors. It intentionally makes no compatibility claim for different firmware, hardware or drivers.
+Before generating overlays, the launcher checks the eight GPU IDs and render nodes, hydcu version/source identity, PCI IDs, CU profile and existing properties. The README lists the supported environment.
 
-Negative controls in the original experiment:
+## Diagnostic controls
 
 | Control | Outcome |
 |---|---|
-| gfx906 ISA mapping alone | Enumerates8; first kernel fails209 |
-| ioctl request size96→88 | CREATE_QUEUE still EFAULT |
+| gfx 906 ISA mapping alone | Enumerates 8; first kernel fails 209 |
+| ioctl request size 96→88 | CREATE_QUEUE still EFAULT |
 | HSA_USE_SVM=0 | First kernel still fails |
 | HSA_USE_SVM=0 + HSA_USERPTR_FOR_PAGED_MEM=0 | First kernel still fails |
-| Correct CWSR/ctl properties with ISA mapping | Single/eight/56-way correctness passes |
+| Correct CWSR/ctl properties with ISA mapping | Single/eight/56-way tests pass |
 
-Initial CWSR control used an instrumentation-only ioctl logger and explicit ISA override. Final hardware validation used topology overlays alone with original community HIP/HSA libraries. No cache invalidation was skipped, no driver check was disabled, and no host global library state was changed.
-
-The export keeps the numerical workloads and topology adapter unchanged. Only checkout-relative storage and neutral container labels/names were introduced in the public launcher. Unit tests cover this launcher; a new hardware run of that portable export is not claimed.
+The initial CWSR control used an ioctl logger and explicit ISA override. Final hardware validation used the topology overlay with the community image's HIP/HSA libraries.

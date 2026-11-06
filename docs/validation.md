@@ -1,15 +1,21 @@
 # Validation record
 
-Hardware tests completed on2026-11-06 for one fixed eight-card Hygon Z100L platform. [summary.json](../validation/results/summary.json) is an explicitly selected public summary, not a raw host snapshot. [HIP output](../validation/results/hip-extended.log) and [rocBLAS output](../validation/results/rocblas-numeric.log) are the original workload stdout, copied without content changes. Their filenames omit local experiment directory identifiers. Raw machine/process/container metadata is not included.
+Hardware tests completed on 2026-11-06 on eight Hygon Z 100L GPUs. [summary.json](../validation/results/summary.json) records the results; the [HIP log](../validation/results/hip-extended.log) and [rocBLAS log](../validation/results/rocblas-numeric.log) contain the workload output.
 
-The HIP workload allocates72 device arrays (288MiB payload total), including56 independent destination buffers, with one stream per destination GPU. Each of3 rounds fills all devices, checks56 directed copies of4MiB each, then checks56 kernels reading a peer source pointer directly. Every int32 element is checked; immutable sources are checked again. All eight streams are drained at phase boundaries before a source can change or be released. Eight graphs capture fill+transform; each of3 replays first poisons buffers and then validates every element. The final log requires explicit CLEANUP_PASS with all tracked resource counters zero.
+## HIP and P 2P
 
-The rocBLAS workload runs64×64 column-major FP32 SGEMM against a CPU reference. Small integer inputs keep the exact sum representable in FP32. Three rounds and three graph replays run on all eight devices. Each iteration poisons the output, then checks finite values and exact equality for all4096 results. There are24 SGEMM and24 graph pass lines. Cleanup checks API statuses and propagates failure through the exit code; this workload does not print an independent resource-count CLEANUP_PASS line.
+The HIP workload allocates 72 device arrays (288 MiB payload), including 56 independent destination buffers, with one stream per destination GPU. Each of 3 rounds fills all devices, checks 56 directed copies of 4 MiB each, then checks 56 kernels reading peer source pointers. Every int 32 element is compared, and source arrays are checked again after the remote reads. All eight streams finish at each phase boundary before source buffers change.
 
-Original recorded container attach/exit/removal codes were0, with no OOM or State.Error. Final mapped libraries belonged to the pinned community image (HIP7.16.26385, ROCr1.21.0), with no LD_PRELOAD, HSA_OVERRIDE_GFX_VERSION or host HYHAL/HIP mounts. The later extended/rocBLAS runs include the source-version guard; an earlier basic run predated that guard and is not represented as using it.
+Eight graphs capture fill+transform. Each of 3 replays first poisons the buffers, then checks every element. The final log reports CLEANUP_PASS with all tracked resource counters at zero.
 
-The two workloads and compat_topology.py in this repository match the hardware-tested source hashes recorded in [source-provenance.json](source-provenance.json). The portable launcher differs only in storage roots and container names/labels. Its lifecycle tests simulate Docker; no additional GPU validation of the exported launcher is claimed. Unit fixtures use synthetic node/GPU IDs and contain no machine identity.
+## rocBLAS
 
-Original-host preservation was separately checked: driver/HYHAL, both existing runtime bundles and source hashes matched; both weight sets matched retained metadata certificates (no new full weight hash); original-toolchain eight-card and56-direction probes passed. KFD released probe BOs asynchronously after process exit; a bounded follow-up sample showed all cards back at2142208B. No reset, driver reload or reboot was used.
+The rocBLAS workload runs 64×64 column-major FP 32 SGEMM against a CPU reference. Small integer inputs make the expected results exactly representable in FP 32. Three SGEMM rounds and three graph replays run on all eight devices. Each iteration poisons the output and checks all 4096 values for finiteness and exact equality. The log contains 24 SGEMM and 24 graph pass records. Cleanup failures propagate through the exit code.
 
-These are correctness tests, not benchmark results, full framework certification or proof of physical P2P routing. No model inference score or long-duration production-stability claim is made.
+## Test setup
+
+Recorded container attach, exit and removal codes were 0, with no OOM or State.Error. The runtime used the pinned community image's HIP 7.16.26385 and ROCr 1.21.0 libraries.
+
+The topology adapter and C++ workloads match the hardware-tested source hashes in [source-provenance.json](source-provenance.json). The portable launcher changes storage paths and container names/labels; its changes are covered by mocked Docker lifecycle tests rather than a new GPU run. Seventeen unit tests cover topology checks and launcher behavior using synthetic fixtures.
+
+Final host checks matched the driver, runtime and source hashes, plus retained weight metadata. Original-toolchain eight-card and 56-direction probes passed, and all cards returned to 2142208B of VRAM usage after KFD cleanup.

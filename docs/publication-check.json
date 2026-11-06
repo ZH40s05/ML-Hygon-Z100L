@@ -17,8 +17,8 @@
     },
     {
       "path": "docs/compatibility.md",
-      "bytes": 2767,
-      "sha256": "ba52dd47ac6abd2a4e7c0b463e935bd78ebc4361302f6a267a230d13236cad37"
+      "bytes": 1852,
+      "sha256": "5d40bf4cb85c15e14fb4b96ad65c8ea843fed2dab3ccab0ec8b3d9d99a8760db"
     },
     {
       "path": "docs/source-provenance.json",
@@ -27,8 +27,8 @@
     },
     {
       "path": "docs/validation.md",
-      "bytes": 3109,
-      "sha256": "987004b554e34e374c3810fd9abbac6980305663539a049caae163c76a384d49"
+      "bytes": 2199,
+      "sha256": "56297205197a2ffc5de5c20b98352e8541ce8c492f259afdb9d8e58a24bc8ad8"
     },
     {
       "path": "LICENSE",
@@ -37,8 +37,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7715,
-      "sha256": "a460571735f9254e928f3830eec9aaef6fb7665854c0e4c3ceacf5ce53bca6fb"
+      "bytes": 5790,
+      "sha256": "b98c092d540e9487dba21e18a7fe2ced7bc76f2718c735c8e6db30ab1481b5fb"
     },
     {
       "path": "run_compatible.py",
