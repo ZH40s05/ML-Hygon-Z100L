@@ -1,0 +1,49 @@
+ROCBLAS_SGEMM_PASS round=0 device=0 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=1 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=2 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=3 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=4 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=5 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=6 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=0 device=7 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=0 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=1 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=2 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=3 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=4 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=5 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=6 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=1 device=7 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=0 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=1 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=2 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=3 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=4 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=5 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=6 n=64 checked=4096
+ROCBLAS_SGEMM_PASS round=2 device=7 n=64 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=0 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=1 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=2 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=3 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=4 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=5 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=6 checked=4096
+ROCBLAS_GRAPH_PASS round=0 device=7 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=0 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=1 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=2 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=3 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=4 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=5 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=6 checked=4096
+ROCBLAS_GRAPH_PASS round=1 device=7 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=0 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=1 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=2 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=3 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=4 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=5 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=6 checked=4096
+ROCBLAS_GRAPH_PASS round=2 device=7 checked=4096
+PASS rocblas_numeric devices=8 sgemm_rounds=3 graph_rounds=3 exact_integer_fp32=true

@@ -1,0 +1,56 @@
+CONFIG devices=8 required=8 driver=71626385 runtime=71626385 n=1048576 rounds=3 graph_replays=3 pair_count=56 correctness_only=1
+MEMORY device_arrays=72 device_payload_bytes=301989888 pair_payload_bytes=234881024 host_payload_bytes=4194304
+DEVICE dst=0 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=1 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=2 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=3 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=4 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=5 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=6 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+DEVICE dst=7 name=AMD Radeon Graphics arch=gfx906:sramecc+:xnack-
+PEERS_PASS pairs=56 owned=56 preexisting=0
+BOUNDARY_BEGIN round=1 phase=fill streams=8
+BOUNDARY_PASS round=1 phase=fill streams=8
+PHASE_PASS round=1 phase=fill devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+BOUNDARY_BEGIN round=1 phase=peer_copy streams=8
+BOUNDARY_PASS round=1 phase=peer_copy streams=8
+PHASE_PASS round=1 phase=peer_copy devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+BOUNDARY_BEGIN round=1 phase=remote_read streams=8
+BOUNDARY_PASS round=1 phase=remote_read streams=8
+PHASE_PASS round=1 phase=remote_read devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+PHASE_PASS round=1 phase=source_unchanged devices=8 streams=8 arrays=8 pairs=0 checked_elements=8388608 all_n=1048576
+ROUND_PASS round=1 copy_pairs=56 remote_pairs=56 all_n=1048576
+BOUNDARY_BEGIN round=2 phase=fill streams=8
+BOUNDARY_PASS round=2 phase=fill streams=8
+PHASE_PASS round=2 phase=fill devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+BOUNDARY_BEGIN round=2 phase=peer_copy streams=8
+BOUNDARY_PASS round=2 phase=peer_copy streams=8
+PHASE_PASS round=2 phase=peer_copy devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+BOUNDARY_BEGIN round=2 phase=remote_read streams=8
+BOUNDARY_PASS round=2 phase=remote_read streams=8
+PHASE_PASS round=2 phase=remote_read devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+PHASE_PASS round=2 phase=source_unchanged devices=8 streams=8 arrays=8 pairs=0 checked_elements=8388608 all_n=1048576
+ROUND_PASS round=2 copy_pairs=56 remote_pairs=56 all_n=1048576
+BOUNDARY_BEGIN round=3 phase=fill streams=8
+BOUNDARY_PASS round=3 phase=fill streams=8
+PHASE_PASS round=3 phase=fill devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+BOUNDARY_BEGIN round=3 phase=peer_copy streams=8
+BOUNDARY_PASS round=3 phase=peer_copy streams=8
+PHASE_PASS round=3 phase=peer_copy devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+BOUNDARY_BEGIN round=3 phase=remote_read streams=8
+BOUNDARY_PASS round=3 phase=remote_read streams=8
+PHASE_PASS round=3 phase=remote_read devices=8 streams=8 arrays=56 pairs=56 checked_elements=58720256 all_n=1048576
+PHASE_PASS round=3 phase=source_unchanged devices=8 streams=8 arrays=8 pairs=0 checked_elements=8388608 all_n=1048576
+ROUND_PASS round=3 copy_pairs=56 remote_pairs=56 all_n=1048576
+GRAPH_CAPTURE_PASS devices=8 graphs=8 execs=8 kernels_per_graph=2
+BOUNDARY_BEGIN round=1 phase=graph_replay streams=8
+BOUNDARY_PASS round=1 phase=graph_replay streams=8
+PHASE_PASS round=1 phase=graph_replay devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+BOUNDARY_BEGIN round=2 phase=graph_replay streams=8
+BOUNDARY_PASS round=2 phase=graph_replay streams=8
+PHASE_PASS round=2 phase=graph_replay devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+BOUNDARY_BEGIN round=3 phase=graph_replay streams=8
+BOUNDARY_PASS round=3 phase=graph_replay streams=8
+PHASE_PASS round=3 phase=graph_replay devices=8 streams=8 arrays=16 pairs=0 checked_elements=16777216 all_n=1048576
+CLEANUP_PASS remaining_allocs=0 streams=0 graphs=0 execs=0 owned_peers=0 captures=0
+PASS hip_extended devices=8 streams=8 rounds=3 copy_pairs_per_round=56 remote_pairs_per_round=56 graph_devices=8 graph_replays=3 all_n=1048576 cleanup=PASS correctness_only=1

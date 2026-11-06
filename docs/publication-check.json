@@ -1,0 +1,89 @@
+{
+  "scope": "independent public export only",
+  "unit_tests_passed": 17,
+  "gpu_rerun_of_portable_launcher": false,
+  "sensitive_content_scan_pass": true,
+  "relative_markdown_links_valid": true,
+  "files_excluding_this_record": [
+    {
+      "path": ".gitignore",
+      "bytes": 150,
+      "sha256": "79027e26f6b876e83a9e8b2e91110ef7f6e90fdebf5bef13368c1dd612fe2d1e"
+    },
+    {
+      "path": "compat_topology.py",
+      "bytes": 5296,
+      "sha256": "f67ea8523fff5beb3558909a31211cf62a9141262134d074f49733c13630dff1"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "bytes": 2767,
+      "sha256": "ba52dd47ac6abd2a4e7c0b463e935bd78ebc4361302f6a267a230d13236cad37"
+    },
+    {
+      "path": "docs/source-provenance.json",
+      "bytes": 1889,
+      "sha256": "209125c4ae3f95319fcf596922ed4768c826020000c81e9cc348723c9e4ff364"
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 3109,
+      "sha256": "987004b554e34e374c3810fd9abbac6980305663539a049caae163c76a384d49"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1064,
+      "sha256": "a84f4321c939a391b7320a0a2132c4046a8c375d07363dc12b58436bf37272da"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7665,
+      "sha256": "35df37c38605804414112bbe269195f0c06e0c9e062aa03f9c3ecfdb0ea1d390"
+    },
+    {
+      "path": "run_compatible.py",
+      "bytes": 5901,
+      "sha256": "7c7a24c01400017088f030de7c9a421c671170cad4e9ddc0e55bc7bfac0c0804"
+    },
+    {
+      "path": "tests/fixtures/topology.json",
+      "bytes": 2271,
+      "sha256": "c66d6ee8cfdef1a7b8a30db19b347c4c7164da39a41f4acfc6d9307f3c5c44ee"
+    },
+    {
+      "path": "tests/test_compat_topology.py",
+      "bytes": 4518,
+      "sha256": "e8437fbaf1a3eb88ca14bf43a4d62fd54791c8c67a85429f74e0780b38e3a39b"
+    },
+    {
+      "path": "tests/test_run_compatible.py",
+      "bytes": 5040,
+      "sha256": "75d14ae678449e489f8442b1162ab1597c4ba0021e0186522cd29e2c3e6c32ef"
+    },
+    {
+      "path": "validation/hip_extended.cpp",
+      "bytes": 22199,
+      "sha256": "7a2c08e18d1f7cb9afba857fdf2370a63fc41d3d430dc2050a20dcf70d77f73a"
+    },
+    {
+      "path": "validation/results/hip-extended.log",
+      "bytes": 4205,
+      "sha256": "14e05ca858097265d46457add2a48d17a96b415b0df8146b165fbff6f0cf79cb"
+    },
+    {
+      "path": "validation/results/rocblas-numeric.log",
+      "bytes": 2557,
+      "sha256": "aca63edea4b18493dd4e9f600aafdc3d4efed33599a9ffba4ff9a685b5941ea3"
+    },
+    {
+      "path": "validation/results/summary.json",
+      "bytes": 2523,
+      "sha256": "22dbc7a3cdd057d299669358a5a99184fed87d54145c8f8bb3cffd216652022b"
+    },
+    {
+      "path": "validation/rocblas_numeric.cpp",
+      "bytes": 4201,
+      "sha256": "201dea3202c03bf8a0c2874867da1b56848252d46ef1681037036458d9db34e6"
+    }
+  ]
+}

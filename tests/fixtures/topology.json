@@ -1,0 +1,38 @@
+{
+  "0": {
+    "gpu_id": "0\n",
+    "properties": "cpu_cores_count 64\n"
+  },
+  "1": {
+    "gpu_id": "1001\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 128\n"
+  },
+  "2": {
+    "gpu_id": "1002\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 129\n"
+  },
+  "3": {
+    "gpu_id": "1003\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 130\n"
+  },
+  "4": {
+    "gpu_id": "1004\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 131\n"
+  },
+  "5": {
+    "gpu_id": "1005\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 132\n"
+  },
+  "6": {
+    "gpu_id": "1006\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 133\n"
+  },
+  "7": {
+    "gpu_id": "1007\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 134\n"
+  },
+  "8": {
+    "gpu_id": "1008\n",
+    "properties": "vendor_id 7572\ndevice_id 21943\ngfx_target_version 90106\nwave_front_size 64\nsimd_count 240\nsimd_per_cu 4\nlds_size_in_kb 64\nvgpr_size_per_cu 524288\nsgpr_size_per_cu 16384\ndp4x_status 0\ndrm_render_minor 135\n"
+  }
+}

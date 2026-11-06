@@ -1,0 +1,74 @@
+{
+  "status": "fixed_eight_card_compatibility_prototype_pass",
+  "hardware_test_date": "2026-11-06",
+  "adaptation": {
+    "scope": "read-only per-container topology properties overlay",
+    "native_gfx_target_version": 90106,
+    "compat_gfx_target_version": 90006,
+    "cwsr_size": 33550336,
+    "ctl_stack_size": 20480,
+    "driver_version": "6.2.26",
+    "driver_srcversion": "B568DE62D6C1131D653C14F",
+    "gpu_count": 8,
+    "pci": "1d94:55b7",
+    "ioctl_arguments_mutated": false,
+    "community_runtime_binaries_modified": false,
+    "host_runtime_switched": false
+  },
+  "validation": {
+    "single_default_and_v4": true,
+    "eight_device_integer_compute": true,
+    "peer56_basic": true,
+    "extended": {
+      "rounds": 3,
+      "directed_pairs": 56,
+      "bytes_per_array": 4194304,
+      "streams": 8,
+      "copy_all_elements": true,
+      "remote_kernel_read_all_elements": true,
+      "hip_graph_replays_per_device": 3,
+      "explicit_cleanup_remaining": 0
+    },
+    "rocblas": {
+      "devices": 8,
+      "sgemm_n": 64,
+      "sgemm_rounds": 3,
+      "graph_replays": 3,
+      "cpu_reference": "exact FP32 small integer",
+      "poison_each_output": true
+    },
+    "adapter_unit_tests": 12
+  },
+  "original_host_integrity": {
+    "hash_mismatches": 0,
+    "driver_hyhal_sha_entries": 52,
+    "native_runtime_sha_entries": 25,
+    "author_runtime_sha_entries": 25,
+    "author_source_sha_entries": 3669,
+    "weight_metadata_entries_per_set": 8,
+    "full_weight_hash_recomputed_in_this_task": false,
+    "old_eight_card_compute_pass": true,
+    "old_directed_peer_passes": 56,
+    "host_topology_unchanged": true,
+    "boot_unchanged": true,
+    "remaining_owned_containers": 0,
+    "remaining_experiment_processes": 0,
+    "final_vram_bytes_per_card": 2142208
+  },
+  "public_export": {
+    "topology_adapter_and_cpp_workloads": "byte-identical to hardware-tested versions",
+    "launcher": "checkout-relative paths and neutral labels/names; unit tested, not re-run on GPU",
+    "raw_host_logs_and_identifiers": "not redistributed"
+  },
+  "model_stage": {
+    "executed": false,
+    "new_dsv41_score": null,
+    "decision": "Proceed to a separate isolated rebuild and model correctness/stability phase; no production deployment in this task"
+  },
+  "limits": [
+    "fixed platform profile only",
+    "no physical P2P routing or bandwidth inference",
+    "no full workload or long-duration stability validation",
+    "container create timeout late-completion requires owned-run reconciliation"
+  ]
+}

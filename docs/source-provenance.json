@@ -1,0 +1,33 @@
+{
+  "reference_project": "https://github.com/mixa3607/ML-gfx906",
+  "reference_revision": "20261031203345",
+  "reference_rocm_directory": "https://github.com/mixa3607/ML-gfx906/tree/20261031203345/rocm",
+  "community_image": "mixa3607/rocm-gfx906",
+  "community_amd64_manifest": "sha256:2c124ecab56dd5f509a4310507435bc75588b3fed2e1d4fa28671a2977406395",
+  "community_image_id": "sha256:c5632b04e8874537ffb597c2037179fc62d2f7b7c8ad77adab342d3ef1109ef2",
+  "upstream_candidate_source": "https://github.com/ROCm/rocm-systems/tree/7da43026e4f2ef7600433c38c820732f7a205d22/projects/rocr-runtime",
+  "upstream_source_identity_limit": "Version matches ROCr1.21, not proven byte-identical to image build.",
+  "redistribution_scope": "Own topology adapter, launcher, numerical validation sources, synthetic tests and redacted results only; no vendor source, driver, firmware, ROCm binaries, weights or raw host logs.",
+  "exported_implementation": [
+    {
+      "path": "compat_topology.py",
+      "sha256": "f67ea8523fff5beb3558909a31211cf62a9141262134d074f49733c13630dff1",
+      "relation": "byte-identical to hardware-tested implementation"
+    },
+    {
+      "path": "validation/hip_extended.cpp",
+      "sha256": "7a2c08e18d1f7cb9afba857fdf2370a63fc41d3d430dc2050a20dcf70d77f73a",
+      "relation": "byte-identical to hardware-tested implementation"
+    },
+    {
+      "path": "validation/rocblas_numeric.cpp",
+      "sha256": "201dea3202c03bf8a0c2874867da1b56848252d46ef1681037036458d9db34e6",
+      "relation": "byte-identical to hardware-tested implementation"
+    },
+    {
+      "path": "run_compatible.py",
+      "sha256": "7c7a24c01400017088f030de7c9a421c671170cad4e9ddc0e55bc7bfac0c0804",
+      "relation": "portable export: checkout-relative work/runs, neutral container names and labels; hardware guard and execution logic unchanged; no new GPU run of exported launcher"
+    }
+  ]
+}

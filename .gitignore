@@ -1,0 +1,12 @@
+# Generated device workloads and local execution records
+/work/
+/runs/
+__pycache__/
+/.serena/
+/.playwright-mcp/
+*.py[cod]
+*.so
+*.o
+*.core
+.env
+.env.*
