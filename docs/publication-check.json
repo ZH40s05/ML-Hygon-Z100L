@@ -17,8 +17,8 @@
     },
     {
       "path": "docs/compatibility.md",
-      "bytes": 1852,
-      "sha256": "5d40bf4cb85c15e14fb4b96ad65c8ea843fed2dab3ccab0ec8b3d9d99a8760db"
+      "bytes": 1835,
+      "sha256": "0a70916912ec0705d6e49b3c24d53614f0180e6524a9c20bd119a011c31abfd5"
     },
     {
       "path": "docs/source-provenance.json",
@@ -27,8 +27,8 @@
     },
     {
       "path": "docs/validation.md",
-      "bytes": 2199,
-      "sha256": "56297205197a2ffc5de5c20b98352e8541ce8c492f259afdb9d8e58a24bc8ad8"
+      "bytes": 2194,
+      "sha256": "d2c1e1488f72956eee69f488e0ff9b9c22bc081964f5bf848ed50502b36c85bb"
     },
     {
       "path": "LICENSE",
