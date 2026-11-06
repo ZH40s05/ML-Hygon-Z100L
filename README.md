@@ -84,7 +84,7 @@ python3 -B run_compatible.py --case verify-blas --timeout 240 -- /work/rocblas-n
 
 每次运行写入独立的 runs/case-UUID 目录，包含真实参数、拓扑覆盖、容器状态、输出和删除结果。work 和 runs 都在本地 checkout 下并被 Git 忽略。宿主 checkout 路径不要包含逗号，以免与 Docker --mount 参数格式冲突。
 
-容器只读、无网络、cap-drop ALL、no-new-privileges；限制 CPU/内存/PID，memlock unlimited；仅 work 目录可写，八项拓扑覆盖只读。正式验证不使用 LD_PRELOAD、HSA_OVERRIDE_GFX_VERSION 或宿主旧 HIP/HYHAL 注入。
+容器只读、无网络、cap-drop ALL、no-new-privileges；限制 CPU/内存/PID，memlock unlimited；仅 work 宿主目录以可写方式挂载，另提供临时 /tmp tmpfs；八项拓扑覆盖只读。正式验证不使用 LD_PRELOAD、HSA_OVERRIDE_GFX_VERSION 或宿主旧 HIP/HYHAL 注入。
 
 ## 已完成验证
 
